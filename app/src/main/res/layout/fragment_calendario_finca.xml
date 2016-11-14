@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/MyDarkToolbarStyle"
+            app:popupTheme="@style/Theme.AppCompat.NoActionBar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Nombre del Mes"
+            android:textSize="25dp"
+            android:textColor="@color/colorAccent"/>
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            android:id="@+id/compactcalendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            app:compactCalendarTextSize="12sp"
+            app:compactCalendarBackgroundColor="#FFF"
+            app:compactCalendarTextColor="#000"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/colorAccent"
+            app:compactCalendarCurrentDayBackgroundColor="#FFFFFF"
+            app:compactCalendarMultiEventIndicatorColor="@color/calendar_indicatos"
+            />
+        <Button
+            android:id="@+id/bt_calendario_ver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="Ver Video"
+            android:textColor="@color/colorAccent"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:compactCalendarBackgroundColor="#FFF"
+            android:layout_weight="3">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+    <VideoView
+        android:id="@+id/vv_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+</RelativeLayout>

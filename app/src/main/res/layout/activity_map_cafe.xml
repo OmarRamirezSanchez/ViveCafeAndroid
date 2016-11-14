@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:id="@+id/tool_bar_ll"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="@color/alpha_wite80">
+        <ImageView
+            android:id="@+id/imv_map_cafe_close"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_cancelar"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:textSize="22dp"
+            android:textColor="@color/colorAccent"
+            android:text="Ixhuatlán"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/tool_bar_ll"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/libre_ocupado"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_vive_cafe"
+            android:icon="@drawable/experiencia_icon"
+            android:title="Vive Café experiencia" />
+        <item
+            android:id="@+id/nav_fincas"
+            android:icon="@drawable/fincaz_icon"
+            android:title="Fincas" />
+        <item
+            android:id="@+id/nav_fundacion"
+            android:icon="@drawable/productos_icon"
+            android:title="Funcdación" />
+        <item
+            android:id="@+id/nav_productos"
+            android:icon="@drawable/fundacion_icon"
+            android:title="Productos" />
+        <item
+            android:id="@+id/nav_ajustes"
+            android:icon="@drawable/ajustes_icon"
+            android:title="Ajustes" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_contacto"
+                android:icon="@drawable/contacto_icon"
+                android:title="Contacto" />
+            <item
+                android:id="@+id/nav_chat"
+                android:icon="@drawable/chat_icon"
+                android:title="Chat" />
+        </menu>
+    </item>
+
+</menu>

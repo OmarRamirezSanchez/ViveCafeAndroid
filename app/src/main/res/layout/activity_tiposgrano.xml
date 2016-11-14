@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:backgroundTint="@color/colorAccent"
+        android:id="@+id/appBarLayout2">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/MyDarkToolbarStyle"
+            app:popupTheme="@style/Theme.AppCompat.NoActionBar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/appBarLayout2"
+        android:layout_alignParentEnd="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/colombiano"
+            android:scaleType="centerCrop"
+            android:id="@+id/im_cafetype" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:paddingLeft="20dp"
+            android:background="@color/alpha_wite"
+            android:gravity="center_vertical"
+            android:textColor="@color/alpha_wite80"
+            android:text="Nombre del Cafe"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_alignBottom="@+id/im_cafetype"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView9" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_cafe_grano_descripcion"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Texto de Ejemplo"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <RelativeLayout
+            android:id="@+id/rl_cafe_colombiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorAccent">
+            <ImageView
+                android:padding="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/colombiano_miniatura"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_cafe_robusto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/robusta_miniatura"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_cafe_arabigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arabiga_miniatura"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
