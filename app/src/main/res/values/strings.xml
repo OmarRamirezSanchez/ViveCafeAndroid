@@ -76,4 +76,8 @@
         <item>PLUMA H</item>
         <item>SAN CRISTOBAL</item>
     </array>
+
+    <string name="btn_skip_intro">Skip Intro</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+
 </resources>

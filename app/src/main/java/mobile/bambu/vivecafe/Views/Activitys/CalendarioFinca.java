@@ -50,10 +50,7 @@ import mobile.bambu.vivecafe.Views.Adapters.FincasAdapater;
 
 public class CalendarioFinca extends AppCompatActivity implements EventosAdapter.EventoSelected,Constans,View.OnClickListener {
     public static String TAG = "CalendarioFinca";
-    /**
-     * UI
-     */
-    Button bt_verVideo;
+
 
     /**
      * Models
@@ -146,7 +143,6 @@ public class CalendarioFinca extends AppCompatActivity implements EventosAdapter
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
         rv_eventos.setLayoutManager(mLinearLayoutManager);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        bt_verVideo = (Button) findViewById(R.id.bt_calendario_ver);
     }
 
     public void initUIConfiguration(){
@@ -157,12 +153,18 @@ public class CalendarioFinca extends AppCompatActivity implements EventosAdapter
     }
 
     public void initListener(){
-        bt_verVideo.setOnClickListener(this);
+
+    }
+
+    private void startVideo(String videoCode){
+        Intent intentVideo = new Intent(this,YouTubeViewActivity.class);
+        intentVideo.putExtra(YOUTUBE_VIDEO_CODE,videoCode);
+        startActivity(intentVideo);
     }
 
     @Override
     public void eventoSelected(Evento evento, int index) {
-
+        startVideo(evento.getVideo_code());
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -192,20 +194,5 @@ public class CalendarioFinca extends AppCompatActivity implements EventosAdapter
 
     @Override
     public void onClick(View v) {
-        /*
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://www.youtube.com/watch?v=qbvICvih99U"));
-                        startActivity(browserIntent);
-       */
-        VideoView video =(VideoView)findViewById(R.id.vv_video);
-        video.setVisibility(View.VISIBLE);
-        MediaController mediaController= new MediaController(this);
-        mediaController.setAnchorView(video);
-        Uri uri=Uri.parse("rtsp://r7---sn-4g57kue6.googlevideo.com/Ck0LENy73wIaRAmk3cJBg-iaXhMYDSANFC3u0pRWMOCoAUIJbXYtZ29vZ2xlSARSBXdhdGNoYIaluaTkzciOVooBCzVxRjNraG5XcXdnDA==/D693A8E7577C3A29E60C292B42C9C87D7C25A565.762A63DC4CA0A028DA83256C6A79E5F160CBEDA3/yt6/1/video.3gp");
-        video.setMediaController(mediaController);
-        video.setVideoURI(uri);
-        video.requestFocus();
-        video.start();
-         /*   */
     }
 }

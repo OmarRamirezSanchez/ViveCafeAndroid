@@ -18,6 +18,7 @@ public class Evento implements Serializable,Constans{
     String fecha_final;
     String decripcion;
     String estado;
+    String video_code;
     String uuid;
 
     public Evento() {
@@ -27,6 +28,7 @@ public class Evento implements Serializable,Constans{
         this.decripcion = "";
         this.estado = "";
         this.uuid = "";
+        this.video_code = "";
     }
     public Evento(String nombre) {
         this.nombre = nombre;
@@ -38,6 +40,7 @@ public class Evento implements Serializable,Constans{
         this.fecha_final = fecha_final;
         this.decripcion = decripcion;
         this.estado = estado;
+        this.video_code = "";
         this.uuid = "";
     }
 
@@ -50,6 +53,7 @@ public class Evento implements Serializable,Constans{
         result.put(evento_key_fecha_inicio, fecha_inicio);
         result.put(evento_key_fecha_final, fecha_final);
         result.put(evento_key_uuid,uuid);
+        result.put(evento_key_video_code,video_code);
         return result;
     }
 
@@ -59,6 +63,23 @@ public class Evento implements Serializable,Constans{
         this.fecha_final = evento.fecha_final;
         this.decripcion = evento.decripcion;
         this.estado = evento.estado;
+        this.video_code =  evento.video_code;
+    }
+
+    public void setVideo_code(String video_code) {
+        this.video_code = video_code;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getVideo_code() {
+        return video_code;
+    }
+
+    public String getUuid() {
+        return uuid;
     }
 
     public String getNombre() {

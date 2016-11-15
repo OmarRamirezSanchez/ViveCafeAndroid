@@ -1,22 +1,28 @@
 package mobile.bambu.vivecafe.Views.Activitys;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.icu.text.CompactDecimalFormat;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import me.drakeet.materialdialog.MaterialDialog;
 import mobile.bambu.vivecafe.Interfaces.Constans;
 import mobile.bambu.vivecafe.Models.Cafe;
 import mobile.bambu.vivecafe.Models.Finca;
@@ -27,6 +33,7 @@ import mobile.bambu.vivecafe.R;
 
 /**
  * Created by Bambu on 10/11/2016.
+ * Bancomer
  */
 
 public class TiposDeGranos extends AppCompatActivity implements Constans,View.OnClickListener{
@@ -136,13 +143,93 @@ public class TiposDeGranos extends AppCompatActivity implements Constans,View.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.aceptar) {
-            this.startSuscription();
+            aletSelectNivelCafeina();
             return true;
         }
         if (item.getItemId() == android.R.id.home) {
             finish(); // close this activity and return to preview activity (if there is any)
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private  void aletSelectTipoDeMolido(){
+        final CharSequence colors[] = new CharSequence[] {"Modilo para Cafetera", "Molido para Olla", "Grano completo"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Tipo de Molido");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+                dialog.dismiss();
+                cafe.tipo_molido = (String) colors[which];
+                startSuscription();
+            }
+        });
+        builder.show();
+    }
+
+    private  void aletSelectTipoDeTostado(){
+        final CharSequence colors[] = new CharSequence[] {"Ligero", "Medio", "Medio obscuro","Intense"};
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Paso 2 : Tipo de Tostado ");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+                dialog.dismiss();
+                cafe.tipo_tostado = (String) colors[which];
+                aletSelectTipoDeMolido();
+            }
+        });
+        builder.show();
+    }
+
+    private  void aletSelectNivelCafeina(){
+        final CharSequence colors[] = new CharSequence[] {"Bajo", "Intermedio", "Alto"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Paso 1 : Nivel de Cafeina");
+        builder.setItems(colors, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // the user clicked on colors[which]
+                dialog.dismiss();
+                cafe.nivel_cafeina = (String) colors[which];
+                aletSelectTipoDeTostado();
+            }
+        });
+        builder.show();
+    }
+
+    private void selectTipoDeTostado(){
+        final ArrayAdapter<String> arrayAdapter
+                = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1);
+        for (int j = 0; j < 4; j++) {
+            arrayAdapter.add("This is item " + j);
+        }
+
+        ListView listView = new ListView(this);
+        listView.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
+        float scale = getResources().getDisplayMetrics().density;
+        int dpAsPixels = (int) (8 * scale + 0.5f);
+        listView.setPadding(0, dpAsPixels, 0, dpAsPixels);
+        listView.setDividerHeight(0);
+        listView.setAdapter(arrayAdapter);
+
+        final MaterialDialog alert = new MaterialDialog(this).setTitle(
+                "MaterialDialog").setContentView(listView);
+
+        alert.setPositiveButton("OK", new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                alert.dismiss();
+            }
+        });
+
+        alert.show();
     }
 
     @Override

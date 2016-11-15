@@ -8,7 +8,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name=".ViveCafeAplication"
         android:allowBackup="true"
@@ -67,6 +67,9 @@
         <activity android:name=".Views.Activitys.SuscriptionTerrain"
             android:label="@string/title_activity_suscription"
             android:theme="@style/NoActionBar"/>
+        <activity android:name=".Views.Activitys.YouTubeViewActivity"
+            android:screenOrientation="userLandscape"/>
+
     </application>
 
 </manifest>

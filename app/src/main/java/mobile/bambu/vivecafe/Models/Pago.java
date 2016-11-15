@@ -24,7 +24,7 @@ public class Pago implements Serializable,Constans{
     public String monto = NO_SE_ENCONTRO;
     public String fecha_inicio = NO_SE_ENCONTRO;
     public String estado = NO_SE_ENCONTRO;
-
+    public Cafe cafe;
 
     public Pago(){
         this.uuid =  NO_SE_ENCONTRO;
@@ -42,6 +42,8 @@ public class Pago implements Serializable,Constans{
         this.uid_terreno =  terreno.uuid;
         this.uid_membrecia =  membrecia.uuiid;
         this.uid_cafe =  cafe.uid;
+        this.cafe =  cafe;
+        this.name = user.email;
     }
 
     @Exclude
@@ -56,6 +58,7 @@ public class Pago implements Serializable,Constans{
         result.put(pago_key_monto, monto);
         result.put(pago_key_fecha_inicio, fecha_inicio);
         result.put(pago_key_estado, estado);
+        result.put(pago_key_cafe,cafe);
         return result;
     }
 }

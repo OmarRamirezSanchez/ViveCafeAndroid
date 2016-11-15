@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="65dp"
-
         android:text="Paso 1."
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
@@ -40,114 +39,69 @@
         android:layout_alignBottom="@+id/textView4"
         android:layout_toEndOf="@+id/textView4" />
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:background="#fff"
+        android:gravity="center"
+        android:id="@+id/linearLayout4">
+        <RelativeLayout
+            android:id="@+id/rl_cafe_colombiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorAccent">
+            <ImageView
+                android:padding="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/colombiano_miniatura"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_cafe_robusto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/robusta_miniatura"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rl_cafe_arabigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arabiga_miniatura"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:text="Membresia Descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_membrecia_description"
+        android:layout_above="@+id/linearLayout4"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:orientation="vertical"
+        android:layout_below="@+id/tv_membrecia_title"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
-        android:layout_alignEnd="@+id/textView5">
+        android:layout_alignStart="@+id/textView4"
+        android:id="@+id/tv_membrecia_title"
+        android:layout_alignEnd="@+id/textView5" />
 
-        <RelativeLayout
-            android:id="@+id/rl_paquete_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:background="@color/colorAccent"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/imageView3" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/linearLayout4"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toEndOf="@+id/imageView3">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Paquete 1"
-                    android:textColor="@color/amembrecia_title_paquete"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/amembrecia_paquete1"/>
-            </LinearLayout>
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:id="@+id/rb_membrecia_1"
-                android:layout_alignBottom="@+id/linearLayout4"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp" />
-        </RelativeLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/line_gris"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/rl_paquete_2"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:background="@color/colorAccent"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
-
-                android:id="@+id/im_p2" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/ll_p2"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:layout_toEndOf="@+id/im_p2">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Paquete 2"
-                    android:textColor="@color/amembrecia_title_paquete"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/amembrecia_paquete3"/>
-            </LinearLayout>
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/rb_membrecia_2"
-                android:layout_alignBottom="@+id/ll_p2"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp" />
-        </RelativeLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/line_gris"/>
-
-
-
-    </LinearLayout>
 </RelativeLayout>

@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import mobile.bambu.vivecafe.Interfaces.Constans;
 import mobile.bambu.vivecafe.Models.Finca;
@@ -32,18 +33,17 @@ import mobile.bambu.vivecafe.R;
 
 public class Membrecias extends AppCompatActivity implements Constans,View.OnClickListener{
 
-    CheckBox rb_membresia_1,rb_membresia_2;
-    RelativeLayout ll_membrecia_1,ll_membrecia_2;
     Toolbar toolbar;
     Finca finca;
     Terreno terreno;
     User user;
     Membrecia membrecia = new Membrecia();
+    TextView tv_title_membrecia,tv_description_membrecias;
 
     /**
-     *
      * @param savedInstanceState
      */
+
     public static Membrecias membreciasInstans = null;
 
     @Override
@@ -72,17 +72,10 @@ public class Membrecias extends AppCompatActivity implements Constans,View.OnCli
 
     private void iniUIElements(){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        rb_membresia_1 = (CheckBox) findViewById(R.id.rb_membrecia_1);
-        rb_membresia_2 = (CheckBox) findViewById(R.id.rb_membrecia_2);
-        ll_membrecia_1 = (RelativeLayout) findViewById(R.id.rl_paquete_1);
-        ll_membrecia_2 = (RelativeLayout) findViewById(R.id.rl_paquete_2);
     }
 
     private void initUIListeners(){
-        ll_membrecia_2.setOnClickListener(this);
-        ll_membrecia_1.setOnClickListener(this);
-        rb_membresia_1.setOnClickListener(this);
-        rb_membresia_2.setOnClickListener(this);
+
     }
 
     private void initToolBar(){
@@ -139,39 +132,7 @@ public class Membrecias extends AppCompatActivity implements Constans,View.OnCli
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.rl_paquete_1:
-                rb_membresia_1.setChecked(true);
-                rb_membresia_2.setChecked(false);
-                membrecia.uuiid = "Membresia 1";
-                membrecia.descripcion = "Paquete Uno de 1 Kg";
-                membrecia.kg_mensuales = "1 Kg";
-                membrecia.temporalidad = "6 Meses";
-                break;
 
-            case R.id.rl_paquete_2:
-                rb_membresia_2.setChecked(true);
-                rb_membresia_1.setChecked(false);
-                membrecia.uuiid = "Membresia 2";
-                membrecia.descripcion = "Paquete Dos de 1 Kg";
-                membrecia.kg_mensuales = "1 Kg";
-                membrecia.temporalidad = "12 Meses";
-                break;
-            case R.id.rb_membrecia_1:
-                rb_membresia_1.setChecked(true);
-                rb_membresia_2.setChecked(false);
-                membrecia.uuiid = "Membresia 1";
-                membrecia.descripcion = "Paquete Uno de 1 Kg";
-                membrecia.kg_mensuales = "1 Kg";
-                membrecia.temporalidad = "6 Meses";
-                break;
-            case R.id.rb_membrecia_2:
-                rb_membresia_2.setChecked(true);
-                rb_membresia_1.setChecked(false);
-                membrecia.uuiid = "Membresia 2";
-                membrecia.descripcion = "Paquete Dos de 1 Kg";
-                membrecia.kg_mensuales = "1 Kg";
-                membrecia.temporalidad = "12 Meses";
-                break;
         }
     }
 }

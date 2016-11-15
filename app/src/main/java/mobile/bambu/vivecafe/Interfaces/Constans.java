@@ -6,6 +6,12 @@ package mobile.bambu.vivecafe.Interfaces;
 
 public interface Constans {
 
+    /**
+     *
+     */
+
+    public static final String DEVELOPER_KEY = "AIzaSyD7JKnC4MIIOJyLyDVqmwuHFi7l0EQsnhU";
+    public static final String YOUTUBE_VIDEO_CODE = "YOUTUBE_VIDEO_CODE";
 
     public static final String NO_SE_ENCONTRO = "";
     /**
@@ -84,7 +90,7 @@ public interface Constans {
     public static String evento_key_decripcion= "decripcion";
     public static String evento_key_estado= "estado";
     public static String evento_key_uuid = "uuid";
-
+    public static String evento_key_video_code = "video_code";
 
     public static String pago_key_uuid = "uuid";
     public static String pago_key_name= "name";
@@ -95,4 +101,14 @@ public interface Constans {
     public static String pago_key_terreno = "terreno";
     public static String pago_key_fecha_inicio = "fecha_inicio ";
     public static String pago_key_estado = "estado";
+    public static String pago_key_cafe= "cafe";
+
+
+    public static String cafe_key_nombre= "nombre";
+    public static String cafe_key_typo= "typo";
+    public static String cafe_key_nivel_cafeina= "nivel_cafeina";
+    public static String cafe_key_decripcion= "decripcion";
+    public static String cafe_key_tipo_tostado= "tipo_tostado";
+    public static String cafe_key_uuid = "uuid";
+    public static String cafe_key_tipo_molido = "tipo_molido";
 }
