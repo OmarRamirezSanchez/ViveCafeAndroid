@@ -87,7 +87,7 @@ public interface Constans {
     public static String evento_key_nombre= "nombre";
     public static String evento_key_fecha_inicio= "fecha_inicio";
     public static String evento_key_fecha_final= "fecha_final";
-    public static String evento_key_decripcion= "decripcion";
+    public static String evento_key_decripcion= "descripcion";
     public static String evento_key_estado= "estado";
     public static String evento_key_uuid = "uuid";
     public static String evento_key_video_code = "video_code";
@@ -102,7 +102,7 @@ public interface Constans {
     public static String pago_key_fecha_inicio = "fecha_inicio ";
     public static String pago_key_estado = "estado";
     public static String pago_key_cafe= "cafe";
-
+    public static String pago_key_direccion= "direccion";
 
     public static String cafe_key_nombre= "nombre";
     public static String cafe_key_typo= "typo";
@@ -111,4 +111,12 @@ public interface Constans {
     public static String cafe_key_tipo_tostado= "tipo_tostado";
     public static String cafe_key_uuid = "uuid";
     public static String cafe_key_tipo_molido = "tipo_molido";
+
+    public static String direccion_key_nombre = "nombre";
+    public static String direccion_key_direccion_uno = "direccion_uno";
+    public static String direccion_key_direccion_dos = "direccion_key_direccion_dos";
+    public static String direccion_key_ciudad = "ciudad";
+    public static String direccion_key_estado = "estado";
+    public static String direccion_key_codigo_postal = "codigo_postal";
+
 }

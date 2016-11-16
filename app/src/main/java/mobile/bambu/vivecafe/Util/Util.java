@@ -2,6 +2,7 @@ package mobile.bambu.vivecafe.Util;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.text.DateFormat;
@@ -47,7 +48,13 @@ public class Util {
             return true;
         }
     }
-
+    public final static boolean isValidData(EditText target) {
+        if (target.getText().toString() == null || target.getText().toString().length()<=0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     public static String getHoraString(Date date){
         Calendar calendar = GregorianCalendar.getInstance(); // creates a new calendar instance
         calendar.setTime(date);   // assigns calendar to given date

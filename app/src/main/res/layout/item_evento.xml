@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:textStyle="bold"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/title_color"
             android:textSize="17sp"
             android:text="Siembra"/>
 

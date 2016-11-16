@@ -2,7 +2,9 @@ package mobile.bambu.vivecafe.Views.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
 
 import mobile.bambu.vivecafe.Interfaces.Constans;
 import mobile.bambu.vivecafe.Models.Finca;
@@ -46,7 +49,11 @@ public class FincasAdapater extends RecyclerView.Adapter<FincasAdapater.FincaVie
     public void onBindViewHolder(FincaViewHolder holder, final int position) {
         Finca finca = fincas.get(position);
         holder.im_name.setText(finca.getNombre());
-        holder.im_name.setVisibility(View.INVISIBLE);
+        if( position%2 == 0){
+            holder.im_filtro.setBackgroundColor(ContextCompat.getColor(mContext,R.color.im_flitro_rojo));
+        }else {
+            holder.im_filtro.setBackgroundColor(ContextCompat.getColor(mContext,R.color.im_flitro_verde));
+        }
         holder.im_back_gound.setImageResource(Util.getImageFinca(finca));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,13 +70,14 @@ public class FincasAdapater extends RecyclerView.Adapter<FincasAdapater.FincaVie
 
     class FincaViewHolder extends RecyclerView.ViewHolder{
         protected ImageView im_back_gound;
+        protected ImageView im_filtro;
         protected TextView im_name;
 
         public FincaViewHolder(View view) {
             super(view);
             this.im_back_gound = (ImageView) view.findViewById(R.id.item_finca_im_background);
             this.im_name = (TextView) view.findViewById(R.id.item_finca_title);
-
+            this.im_filtro = (ImageView) view.findViewById(R.id.item_im_fitro);
         }
     }
 

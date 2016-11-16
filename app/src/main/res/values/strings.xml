@@ -37,6 +37,22 @@
     <string name="amembrecia_paquete3">12 meses - 1kg mensual(18kg)</string>
     <string name="amembrecia_paquete4">12 meses - 3kg mensual(24kg)</string>
 
+    <string name="st_no_cuenta_hint">No. Cuenta</string>
+    <string name="st_clave_interbancaria_hint">Clave Interbancaria</string>
+    <string name="st_banco_hint">Banco</string>
+    <string name="st_no_cuenta">2889901566</string>
+    <string name="st_clave_interbancaria">012020028899015667</string>
+    <string name="st_banco">Bancomer</string>
+    <string name="st_datos_envio">Datos de Envio</string>
+
+    <string name="st_nombre_hint">Nombre Completo:</string>
+    <string name="st_direccion_uno_hint">Direccion:</string>
+    <string name="st_direccion_dos_hint">Departamento:</string>
+    <string name="st_ciudad_hint">Ciudad:</string>
+    <string name="st_estado_hint">Estado/Provincia/Region</string>
+    <string name="st_codigo_postal">ZIP/Código Postal:</string>
+
+
 
     <string name="error_404">No se pudo encontrar</string>
     <string name="error_403">No se pudo completar la Operacion para</string>
@@ -54,9 +70,17 @@
 
     <string name="acafetype_paso_descripcion">Elige el tipo de café que deseas cosechar</string>
     <string name="cafe_grano_arabigo">El cafeto arábigo (Coffea arabica) es un arbusto de la familia de las rubiáceas nativo de Etiopía y/o Yemen; es la principal especie cultivada para la producción de café (obtenido a partir de las semillas tostadas), y la de mayor antigüedad en agricultura, datándose su uso a finales del I milenio en la península arábiga.</string>
-    <string name="cafe_grano_robusto">Es una especie de café (género Coffea) originaria del África occidental. Crece sobre todo en África y en Brasil, donde se conoce con el nombre de Conillon. También se halla en el sureste asiático, donde los colonialistas franceses introdujeron el cultivo en Vietnam a fines del s. XIX, y de allí pasó a Brasil. Es más fácil de cuidar que Coffea arabica y más barato de producir teniendo un precio de mercado internacional por debajo del valor del dólar</string>
-    <string name="cafe_grano_colombiano">El café de Colombia es una indicación geográfica protegida, que fue reconocida en forma oficial por la Unión Europea el 27 de septiembre de 2007.1 2 Dicha denominación se le otorga al café 100% arábigo (coffea arabica) producido en las regiones cafeteras de Colombia, delimitadas entre la latitud Norte 1° a 11°15, longitud Oeste 72° a 78° y rangos específicos de altitud que pueden superar los 2.000 metros sobre el nivel del mar. El término café de Colombia también es una marca de certificación registrada en Estados Unidos el 7 de julio de 1981,3 y en Canadá el 6 de julio de 1990.4 Así mismo, está reconocido como Denominación de Origen Protegida en otros países del mundo</string>
+    <string name="cafe_grano_robusto">Es una especie de café (género Coffea) originaria del África occidental. Crece sobre todo en África y en Brasil, donde se conoce con el nombre de Conillon. También se halla en el sureste asiático, donde los colonialistas franceses introdujeron el cultivo en Vietnam a fines del s. XIX, y de allí pasó a Brasil.</string>
+    <string name="cafe_grano_colombiano">El café de Colombia es una indicación geográfica protegida, que fue reconocida en forma oficial por la Unión Europea el 27 de septiembre de 2007.1 2 Dicha denominación se le otorga al café 100% arábigo (coffea arabica) producido en las regiones cafeteras de Colombia, delimitadas entre la latitud Norte 1° a 11°15, longitud Oeste 72° a 78° y rangos específicos de altitud que pueden superar los 2.000 metros sobre el nivel del mar.</string>
+    <string name="productos_descripcion"></string>
+    <string name="vf_cafe_descripcion">Además, estarás contribuyendo a productores locales de café y a reactivar fincas que necesitaban de este empujón tuyo.</string>
+    <string name="vv_cafe_descripcion">¡TU PROPIO HUERTO ORGÁNICO DE CAFÉ DESDE TU CELULAR!
 
+Vive Café App es una aplicación móvil donde puedes sembrar, dar mantenimiento, cosechar y
+
+producir tu propio café personalizado en las mejores condiciones climáticas y de suelo
+
+¡en diferentes Fincas alrededor de México!</string>
     <array name="ar_meses">
         <item>Ene</item>
         <item>Feb</item>

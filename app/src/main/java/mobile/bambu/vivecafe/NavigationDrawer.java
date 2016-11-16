@@ -2,6 +2,9 @@ package mobile.bambu.vivecafe;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.icu.text.CompactDecimalFormat;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -68,14 +71,15 @@ public class NavigationDrawer extends AppCompatActivity
         this.initUserInformationListener();
         this.initPagosItemsListener();
     }
+
     private void initObjects(){
         this.user = (User) getIntent().getSerializableExtra(KEY_UUID);
         Log.e(TAG,"initObjects : "+this.user);
     }
 
     private void initToolBar(){
-        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWite));
-        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorAccent));
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.fondo_verde));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorWite));
     }
 
     private void iniUIElements(){
@@ -114,10 +118,7 @@ public class NavigationDrawer extends AppCompatActivity
         dbr_RefenceUserInformation = FirebaseDatabase.getInstance().getReference().child(fb_userRoot).child(user.uuid).child(fb_userInfo);
         dbr_RefenceUserInformation.addValueEventListener(vel_userInformation);
     }
-    /**
-     * TODO Esta parte pued estar como estatica en el actividad principal
-     *
-     */
+
     private void initPagosItemsListener(){
         dbr_Pagos =  FirebaseDatabase.getInstance().getReference().child(fb_pagos);
         ChildEventListener cel_pagos = new ChildEventListener() {
@@ -137,6 +138,7 @@ public class NavigationDrawer extends AppCompatActivity
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 Pago pago = dataSnapshot.getValue(Pago.class);
 
+
             }
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
@@ -155,6 +157,7 @@ public class NavigationDrawer extends AppCompatActivity
         Query recentPostsQuery = dbr_Pagos.orderByChild(pago_key_uid_cliente);
         recentPostsQuery.equalTo(user.uuid).addChildEventListener(cel_pagos);
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

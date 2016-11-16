@@ -30,6 +30,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
+
+            android:textColorHint="@color/title_color"
             android:id="@+id/et_email">
             <EditText
                 android:layout_width="match_parent"
@@ -43,6 +45,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
+            android:textColorHint="@color/title_color"
             android:id="@+id/et_password">
             <EditText
                 android:layout_width="match_parent"
@@ -87,16 +90,14 @@
                  android:gravity="center"
                  android:layout_marginLeft="20dp"
                  android:layout_marginRight="20dp"/>
-
          </LinearLayout>
-
     </LinearLayout>
 
     <ImageView
         android:id="@+id/im_icon"
         android:src="@drawable/logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_width="150dp"
         android:layout_height="150dp" />
 </RelativeLayout>

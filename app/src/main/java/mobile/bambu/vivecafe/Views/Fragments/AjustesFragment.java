@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +29,7 @@ public class AjustesFragment extends Fragment implements Constans ,View.OnClickL
 
     TextInputLayout til_nombre,til_apellidos,til_telefono,til_tarjeta,til_dierccion;
     Button bt_cerrarsesion,bt_save;
+    TextView tv_ajustes_email;
     User user;
 
     public void  AjustesFragment(User user){
@@ -54,6 +56,7 @@ public class AjustesFragment extends Fragment implements Constans ,View.OnClickL
         til_telefono = (TextInputLayout) view.findViewById(R.id.til_ajustes_phone);
         til_tarjeta = (TextInputLayout) view.findViewById(R.id.til_ajustes_cardnumber);
         til_dierccion = (TextInputLayout) view.findViewById(R.id.til_ajustes_direccion);
+        tv_ajustes_email = (TextView) view.findViewById(R.id.tv_ajustes_email);
      }
 
     private void initListeners(){
@@ -68,6 +71,7 @@ public class AjustesFragment extends Fragment implements Constans ,View.OnClickL
             til_tarjeta.getEditText().setText(user.card_number);
             til_telefono.getEditText().setText(user.phone);
             til_dierccion.getEditText().setText(user.direccion);
+            tv_ajustes_email.setText(user.email);
         }
     }
 

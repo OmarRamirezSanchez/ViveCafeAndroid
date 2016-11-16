@@ -74,6 +74,7 @@ public class MapCafe extends AppCompatActivity implements OnMapReadyCallback,Goo
         this.initListeners();
         this.initTerrainItemsListener();
         this.initToolBar();
+        this.initPagosItemsListener();
     }
     private void initDataObjects(){
         this.finca = (Finca) getIntent().getExtras().getSerializable(KEY_FINCA);
@@ -96,6 +97,40 @@ public class MapCafe extends AppCompatActivity implements OnMapReadyCallback,Goo
     }
 
 
+    /**
+     * TODO Esta parte pued estar como estatica en el actividad principal
+     *
+     */
+    private void initPagosItemsListener(){
+        DatabaseReference dbr_Pagos =  FirebaseDatabase.getInstance().getReference().child(fb_pagos);
+        ChildEventListener cel_pagos = new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                //actualizarMapa();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                //actualizarMapa();
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                //actualizarMapa();
+            }
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        };
+
+
+        Query recentPostsQuery = dbr_Pagos.orderByChild(pago_key_uid_cliente);
+        recentPostsQuery.equalTo(user.uuid).addChildEventListener(cel_pagos);
+    }
 
     private void initTerrainItemsListener(){
 
@@ -145,6 +180,7 @@ public class MapCafe extends AppCompatActivity implements OnMapReadyCallback,Goo
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.setOnPolygonClickListener(this);
+        mMap.setOnMarkerClickListener(this);
         LatLng fincaLocation = new LatLng(finca.getLatitud(), finca.getLongitud());
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(fincaLocation, 10));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(17), 5000, null);
@@ -230,6 +266,11 @@ public class MapCafe extends AppCompatActivity implements OnMapReadyCallback,Goo
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.maker_grano_cafe)));
     }
 
+    private void startVideo(String videoCode){
+        Intent intentVideo = new Intent(this,YouTubeViewActivity.class);
+        intentVideo.putExtra(YOUTUBE_VIDEO_CODE,videoCode);
+        startActivity(intentVideo);
+    }
     @Override
     public void onPolygonClick(Polygon polygon) {
         Terreno tr_selectes = TerrenoUtil.terrenoByShapeID(polygon.getId(),al_terrenos);
@@ -249,6 +290,7 @@ public class MapCafe extends AppCompatActivity implements OnMapReadyCallback,Goo
     @Override
     public boolean onMarkerClick(Marker marker) {
         Log.e("MapCafe","Select Marker : "+ marker.getPosition());
+        startVideo("OcXxv4eR7dU");
         return false;
     }
 }

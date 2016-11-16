@@ -25,6 +25,7 @@ public class Pago implements Serializable,Constans{
     public String fecha_inicio = NO_SE_ENCONTRO;
     public String estado = NO_SE_ENCONTRO;
     public Cafe cafe;
+    public Direccion direccion;
 
     public Pago(){
         this.uuid =  NO_SE_ENCONTRO;
@@ -37,15 +38,24 @@ public class Pago implements Serializable,Constans{
         this.estado = NO_SE_ENCONTRO;
     }
 
-    public Pago(User user,Terreno terreno,Membrecia membrecia,Cafe cafe){
+    public Pago(User user,Terreno terreno,Membrecia membrecia,Cafe cafe,Direccion direccion){
         this.uid_cliente =  user.uuid;
         this.uid_terreno =  terreno.uuid;
         this.uid_membrecia =  membrecia.uuiid;
         this.uid_cafe =  cafe.uid;
         this.cafe =  cafe;
+        this.direccion = direccion;
         this.name = user.email;
     }
 
+    public void updateByPago(Pago pago){
+        this.uid_cliente =  pago.uid_cliente;
+        this.uid_terreno =  pago.uid_terreno;
+        this.uid_membrecia =  pago.uid_membrecia;
+        this.uid_cafe =  pago.uid_cafe;
+        this.cafe =  pago.cafe;
+        this.name = pago.name;
+    }
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
@@ -59,6 +69,7 @@ public class Pago implements Serializable,Constans{
         result.put(pago_key_fecha_inicio, fecha_inicio);
         result.put(pago_key_estado, estado);
         result.put(pago_key_cafe,cafe);
+        result.put(pago_key_direccion,direccion);
         return result;
     }
 }

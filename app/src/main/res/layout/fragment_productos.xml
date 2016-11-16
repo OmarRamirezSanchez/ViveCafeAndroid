@@ -26,14 +26,14 @@
             android:textColor="@color/title_color"
             android:textStyle="bold"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:text="Tittulo de Ejemplo"/>
+            android:text="Productos"/>
+
         <TextView
             android:id="@+id/tv_vce_descripcion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:textColor="@color/text_color_secondry"
-            android:text="Muajajajaj"/>
+            android:textColor="@color/text_color_secondry"/>
     </LinearLayout>
 
 </LinearLayout>

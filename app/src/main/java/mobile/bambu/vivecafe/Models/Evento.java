@@ -16,7 +16,7 @@ public class Evento implements Serializable,Constans{
     String nombre;
     String fecha_inicio;
     String fecha_final;
-    String decripcion;
+    String descripcion;
     String estado;
     String video_code;
     String uuid;
@@ -25,7 +25,7 @@ public class Evento implements Serializable,Constans{
         this.nombre = "";
         this.fecha_inicio = "";
         this.fecha_final = "";
-        this.decripcion = "";
+        this.descripcion = "";
         this.estado = "";
         this.uuid = "";
         this.video_code = "";
@@ -38,7 +38,7 @@ public class Evento implements Serializable,Constans{
         this.nombre = nombre;
         this.fecha_inicio = fecha_inicio;
         this.fecha_final = fecha_final;
-        this.decripcion = decripcion;
+        this.descripcion = decripcion;
         this.estado = estado;
         this.video_code = "";
         this.uuid = "";
@@ -48,7 +48,7 @@ public class Evento implements Serializable,Constans{
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put(evento_key_nombre, nombre);
-        result.put(evento_key_decripcion, decripcion);
+        result.put(evento_key_decripcion, descripcion);
         result.put(evento_key_estado, estado);
         result.put(evento_key_fecha_inicio, fecha_inicio);
         result.put(evento_key_fecha_final, fecha_final);
@@ -61,7 +61,7 @@ public class Evento implements Serializable,Constans{
         this.nombre = evento.nombre;
         this.fecha_inicio = evento.fecha_inicio;
         this.fecha_final = evento.fecha_final;
-        this.decripcion = evento.decripcion;
+        this.descripcion = evento.descripcion;
         this.estado = evento.estado;
         this.video_code =  evento.video_code;
     }
@@ -95,7 +95,7 @@ public class Evento implements Serializable,Constans{
     }
 
     public String getDecripcion() {
-        return decripcion;
+        return descripcion;
     }
 
     public String getEstado() {
@@ -115,7 +115,7 @@ public class Evento implements Serializable,Constans{
     }
 
     public void setDecripcion(String decripcion) {
-        this.decripcion = decripcion;
+        this.descripcion = decripcion;
     }
 
     public void setEstado(String estado) {
@@ -128,8 +128,9 @@ public class Evento implements Serializable,Constans{
                 "nombre='" + nombre + '\'' +
                 ", fecha_inicio='" + fecha_inicio + '\'' +
                 ", fecha_final='" + fecha_final + '\'' +
-                ", decripcion='" + decripcion + '\'' +
+                ", decripcion='" + descripcion + '\'' +
                 ", estado='" + estado + '\'' +
+                ", video_code='" + video_code + '\'' +
                 ", uuid='" + uuid + '\'' +
                 '}';
     }

@@ -8,6 +8,7 @@ import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -47,7 +48,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener,
     Button bt_registrarse;
     public static String TAG = "Registro";
     private FirebaseAuth mAuth;
-
+    Toolbar toolbar;
     private CoordinatorLayout coordinatorLayout;
     private Context context;
     @Override
@@ -63,6 +64,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener,
     }
 
     private void initToolBar() {
+        setSupportActionBar(toolbar);
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
@@ -80,6 +84,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener,
         et_no_tarjeta= (EditText) findViewById(R.id.et_no_tarjeta);
         et_contraseña = (EditText) findViewById(R.id.et_password);
         bt_registrarse = (Button) findViewById(R.id.bt_registrase);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
     }
     private void initUIConfiguration(){

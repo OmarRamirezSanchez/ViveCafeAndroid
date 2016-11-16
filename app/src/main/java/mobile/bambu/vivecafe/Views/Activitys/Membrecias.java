@@ -1,6 +1,7 @@
 package mobile.bambu.vivecafe.Views.Activitys;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import mobile.bambu.vivecafe.Interfaces.Constans;
 import mobile.bambu.vivecafe.Models.Finca;
@@ -39,11 +42,12 @@ public class Membrecias extends AppCompatActivity implements Constans,View.OnCli
     User user;
     Membrecia membrecia = new Membrecia();
     TextView tv_title_membrecia,tv_description_membrecias;
-
+    ImageView im_membrecia;
+    RelativeLayout rb_membrecia_uno,rb_membrecia_dos,rb_membrecia_tres;
     /**
      * @param savedInstanceState
      */
-
+    ArrayList<RelativeLayout> al_Membrecias = new ArrayList<>();
     public static Membrecias membreciasInstans = null;
 
     @Override
@@ -60,27 +64,39 @@ public class Membrecias extends AppCompatActivity implements Constans,View.OnCli
         this.user = (User) getIntent().getExtras().getSerializable(KEY_UUID);
         this.terreno = (Terreno) getIntent().getExtras().getSerializable(KEY_TERRENO);
         membreciasInstans = this;
-        membrecia.uuiid = "Membresia 1";
-        membrecia.descripcion = "Paquete Uno de 1 Kg";
-        membrecia.kg_mensuales = "1 Kg";
-        membrecia.temporalidad = "6 Meses";
     }
     private void initUIConfiguration(){
         setSupportActionBar(toolbar);
         initToolBar();
+        al_Membrecias.add(rb_membrecia_uno);
+        al_Membrecias.add(rb_membrecia_dos);
+        al_Membrecias.add(rb_membrecia_tres);
+        tv_title_membrecia.setText("Membrecia Uno");
+        tv_description_membrecias.setText("Compra de Café por KG: $350");
+        membrecia.nombre = "M01";
+        membrecia.uuiid = "M01";
+        membrecia.descripcion = "Compra de Café por KG: $350";
     }
 
     private void iniUIElements(){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        rb_membrecia_uno = (RelativeLayout) findViewById(R.id.rl_membrecia_uno);
+        rb_membrecia_dos = (RelativeLayout) findViewById(R.id.rl_membrecia_dos);
+        rb_membrecia_tres =  (RelativeLayout) findViewById(R.id.rl_membrecia_tres);
+        tv_title_membrecia = (TextView) findViewById(R.id.tv_membrecia_title);
+        tv_description_membrecias = (TextView) findViewById(R.id.tv_membrecia_description);
+        im_membrecia = (ImageView) findViewById(R.id.im_membrecia);
     }
 
-    private void initUIListeners(){
-
+    private void initUIListeners() {
+        rb_membrecia_uno.setOnClickListener(this);
+        rb_membrecia_dos.setOnClickListener(this);
+        rb_membrecia_tres.setOnClickListener(this);
     }
 
     private void initToolBar(){
-        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWite));
-        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorAccent));
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
@@ -130,9 +146,48 @@ public class Membrecias extends AppCompatActivity implements Constans,View.OnCli
 
     @Override
     public void onClick(View v) {
-
+        /**
+         *
+         *
+         */
         switch (v.getId()){
+            case R.id.rl_membrecia_uno:
+                setMembreciaSelectes(v.getId());
+                im_membrecia.setImageResource(R.drawable.imagen_ixhuatlan);
+                tv_title_membrecia.setText("Membrecia Uno");
+                tv_description_membrecias.setText("Compra de Café por KG: $350");
+                membrecia.nombre = "M01";
+                membrecia.uuiid = "M01";
+                membrecia.descripcion = "Compra de Café por KG: $350";
+                break;
 
+            case R.id.rl_membrecia_dos:
+                setMembreciaSelectes(v.getId());
+                im_membrecia.setImageResource(R.drawable.imagen_pluma);
+                tv_title_membrecia.setText("Membrecia Dos");
+                tv_description_membrecias.setText("6 meses de Café + 1 mes gratis: $1800");
+                membrecia.nombre = "M02";
+                membrecia.uuiid= "M02";
+                membrecia.descripcion = "6 meses de Café + 1 mes gratis: $1800";
+                break;
+
+            case R.id.rl_membrecia_tres:
+                setMembreciaSelectes(v.getId());
+                im_membrecia.setImageResource(R.drawable.imagen_sancristobal);
+                tv_title_membrecia.setText("Vive Café Experience");
+                tv_description_membrecias.setText("Vive Café Experience 1 Noche Hotel Boutique día de “Siembra” + 1 Noche Gratis en día de\n" +"Cosecha y Producción”: …. ¡ESPÉRALO!");
+                membrecia.nombre = "M03";
+                membrecia.descripcion = "Vive Café Experience";
+                break;
+        }
+    }
+    private void setMembreciaSelectes(int index_id){
+        for (RelativeLayout relativeLayout:al_Membrecias){
+            if (relativeLayout.getId() ==  index_id){
+                relativeLayout.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
+            }else {
+                relativeLayout.setBackgroundColor(Color.WHITE);
+            }
         }
     }
 }

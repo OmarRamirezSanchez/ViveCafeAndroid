@@ -6,8 +6,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="colorControlNormal">@color/title_color</item>
+        <item name="colorControlActivated">@color/title_color</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
+    </style>
 
     <style name="NoActionBar" parent="Theme.AppCompat.Light">
         <item name="windowActionBar">false</item>
@@ -15,6 +22,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/title_color</item>
+        <item name="colorControlActivated">@color/title_color</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -24,6 +34,10 @@
     <style name="MyDarkToolbarStyle" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:colorBackground">@color/fmap_libre</item>
         <item name="android:textColor">@color/fmap_libre</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
+        <item name="colorControlNormal">@color/title_color</item>
+        <item name="colorControlActivated">@color/colorWite</item>
+        <item name="colorControlHighlight">@color/colorWite</item>
     </style>
 
     <style name="RegistroEditText" parent="@style/AppTheme">

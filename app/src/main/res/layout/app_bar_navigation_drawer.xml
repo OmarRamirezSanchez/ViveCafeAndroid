@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:theme="@style/MyDarkToolbarStyle"
+            app:theme="@style/ToolbarColoredBackArrow"
             app:popupTheme="@style/Theme.AppCompat.NoActionBar" />
 
     </android.support.design.widget.AppBarLayout>

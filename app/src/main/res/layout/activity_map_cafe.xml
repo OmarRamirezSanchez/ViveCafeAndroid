@@ -30,7 +30,7 @@
             android:layout_marginLeft="20dp"
             android:gravity="center_vertical"
             android:textSize="22dp"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
             android:text="Ixhuatlán"/>
     </LinearLayout>
 

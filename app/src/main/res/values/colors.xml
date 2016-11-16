@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#BCAAA4</color>
-    <color name="colorPrimaryDark">#A1887F</color>
-    <color name="colorAccent">#6D4C41</color>
+    <color name="colorPrimary">#cec0b6</color>
+    <color name="colorPrimaryDark">#804c1a</color>
+    <color name="colorAccent">#e6e3b8</color>
+
     <color name="amembrecia_title_paquete">#8BC34A</color>
     <color name="fmap_libre">#8BC34A</color>
     <color name="fmap_ocupado">#F44336</color>
-    <color name="alpha_wite">#4DFFFFFF</color>
-    <color name="alpha_wite80">#CCFFFFFF</color>
+    <color name="alpha_wite">#4Dcec0b6</color>
+    <color name="alpha_wite80">#CCcec0b6</color>
     <color name="colorWite">#FFFFFF</color>
     <color name="line_gris">#616161</color>
     <color name="calendar_indicatos">#8BC34A</color>
     <color name="title_color">#6D4C41</color>
     <color name="text_color_secondry">#A1887F</color>
 
+    <color name="fondo_verde">#8dd3aa</color>
     <color name="terreno_adquirido">#E6FFC107</color>
     <color name="terreno_disponible">#8099D5B1</color>
     <color name="terreno_ocupado">#E699D5B1</color>
+
+    <color name="im_flitro_verde">#5976FF03</color>
+    <color name="im_flitro_rojo">#59D50000</color>
 
 </resources>

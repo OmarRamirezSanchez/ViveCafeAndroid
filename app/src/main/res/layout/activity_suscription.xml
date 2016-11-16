@@ -23,7 +23,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="60dp"
@@ -35,24 +35,226 @@
         android:layout_alignParentStart="true"
         android:id="@+id/textView2" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout6">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_no_cuenta_hint"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/st_no_cuenta"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_clave_interbancaria_hint"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/st_clave_interbancaria"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_banco_hint"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/st_banco"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:textColor="@color/title_color"
+        android:text="@string/st_datos_envio"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/linearLayout6"
+        android:layout_alignParentEnd="true" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
-        android:background="@color/colorAccent"
-        android:textColor="@color/colorWite"
-        android:text="Pagar $100.00 MXN"
+        android:layout_marginBottom="5dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
+        android:text="Pagar"
+        android:id="@+id/bt_pagar_suscripcion"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/bt_pagar_suscripcion" />
+        android:layout_centerHorizontal="true" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Texto para convencer al usuario"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:id="@+id/textView7" />
+        android:orientation="vertical"
+        android:id="@+id/linearLayout5"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_nombre_hint"
+
+                android:paddingRight="10dp"
+                android:gravity="right|center" />
+            <EditText
+                android:id="@+id/et_nombre"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_weight="1"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_direccion_uno_hint"
+                android:gravity="right|center"
+                android:paddingRight="10dp" />
+
+            <EditText
+                android:id="@+id/et_direccion"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_direccion_dos_hint"
+                android:gravity="right|center"
+                android:paddingRight="10dp" />
+            <EditText
+                android:id="@+id/et_departamento"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_ciudad_hint"
+                android:gravity="right|center"
+                android:paddingRight="10dp" />
+            <EditText
+                android:id="@+id/et_ciudad"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_estado_hint"
+                android:gravity="right|center"
+                android:paddingRight="10dp" />
+
+            <EditText
+                android:id="@+id/et_estado"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+              />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/title_color"
+                android:text="@string/st_codigo_postal"
+                android:gravity="right|center"
+                android:paddingRight="10dp" />
+            <EditText
+                android:id="@+id/et_zipCode"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
 </RelativeLayout>

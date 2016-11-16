@@ -96,8 +96,8 @@ public class CalendarioFinca extends AppCompatActivity implements EventosAdapter
         });
     }
     private void initToolBar(){
-        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorWite));
-        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorAccent));
+        toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }

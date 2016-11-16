@@ -51,7 +51,9 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.EventoVi
 
     @Override
     public void onBindViewHolder(EventoViewHolder holder, final int position) {
+
         Evento evento = eventos.get(position);
+        Log.e("EventoAdapater",evento.toString());
         holder.tv_name.setText(evento.getNombre());
         holder.tv_description.setText(evento.getDecripcion());
         holder.tv_date.setText(Util.getHoraString(Util.strintToDate(evento.getFecha_inicio())));
